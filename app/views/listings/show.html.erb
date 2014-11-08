@@ -6,6 +6,13 @@
 </p>
 
 <p>
+  <strong>Price:</strong>
+  <%= @listing.asking_price %> <small><i><%= @listing.price_negotiable ? '(negotiable)' : '(non-negotiable)' %></i></small>
+</p>
+
+
+
+<p>
   <strong>Description:</strong>
   <%= @listing.description %>
 </p>
@@ -16,4 +23,4 @@
 </br>
 </br>
 
-<%= link_to 'Back', category_listings_path(@category) %>
+<%= link_to 'Back', :back %>

@@ -1,2 +1,25 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+
+body {
+  text-align: center;
+  font-family: 'Inconsolata';
+  -webkit-font-smoothing: antialiased;
+}
+
+.categoryButton {
+  height: 58px;
+  width: 212px;
+  background-color: #8169a0;
+  display: table;
+  table-layout: fixed;
+  font-size: 20px;
+  margin-top: 1px;
+}
+
+.categoryButton a {
+  color: white;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}

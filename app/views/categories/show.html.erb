@@ -5,5 +5,23 @@
   <%= @category.name %>
 </p>
 
+</br>
+
+<%= link_to '++ New Listing ++', new_category_listing_path(@category) %>
+
+</br>
+</br>
+
+<p>
+  <strong>All Listings</strong>
+  <ul>
+  <% @category.listings.each do |listing| %>
+    <li><%= link_to listing.name, category_listing_path(@category, listing) %>
+</li>
+      <% end%>
+</p>
+  </ul>
+
+
 <%= link_to 'Edit', edit_category_path(@category) %> |
 <%= link_to 'Back', categories_path %>

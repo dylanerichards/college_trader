@@ -1,34 +1,30 @@
 class ListingsController < ApplicationController
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
 
-  # GET /listings
-  # GET /listings.json
   def index
-    @listings = Listing.all
+    @category = Category.find(params[:category_id])
+    @listings = @category.listings
   end
 
-  # GET /listings/1
-  # GET /listings/1.json
   def show
+    @category = Category.find(params[:category_id])
   end
 
-  # GET /listings/new
   def new
+    @category = Category.find(params[:category_id])
     @listing = Listing.new
   end
 
-  # GET /listings/1/edit
   def edit
   end
 
-  # POST /listings
-  # POST /listings.json
   def create
-    @listing = Listing.new(listing_params)
+    @category = Category.find(params[:category_id])
+    @listing = @category.listings.build(listing_params)
 
     respond_to do |format|
       if @listing.save
-        format.html { redirect_to @listing, notice: 'Listing was successfully created.' }
+        format.html { redirect_to category_listing_path(@listing), notice: 'Listing was successfully created.' }
         format.json { render :show, status: :created, location: @listing }
       else
         format.html { render :new }
@@ -37,8 +33,6 @@ class ListingsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /listings/1
-  # PATCH/PUT /listings/1.json
   def update
     respond_to do |format|
       if @listing.update(listing_params)
@@ -51,8 +45,6 @@ class ListingsController < ApplicationController
     end
   end
 
-  # DELETE /listings/1
-  # DELETE /listings/1.json
   def destroy
     @listing.destroy
     respond_to do |format|
@@ -62,13 +54,12 @@ class ListingsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_listing
-      @listing = Listing.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def listing_params
-      params.require(:listing).permit(:name, :description, :is_sell)
-    end
+  def set_listing
+    @listing = Listing.find(params[:id])
+  end
+
+  def listing_params
+    params.require(:listing).permit(:name, :description, :is_sell)
+  end
 end

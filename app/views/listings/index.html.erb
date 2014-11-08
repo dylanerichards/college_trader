@@ -16,9 +16,9 @@
         <td><%= listing.name %></td>
         <td><%= listing.description %></td>
         <td><%= listing.is_sell %></td>
-        <td><%= link_to 'Show', listing %></td>
-        <td><%= link_to 'Edit', edit_listing_path(listing) %></td>
-        <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', category_listing_path(@category, listing) %></td>
+        <td><%= link_to 'Edit', edit_category_listing_path(@category, listing) %></td>
+        <td><%= link_to 'Destroy', category_listing_path(@category, listing), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Listing', new_listing_path %>
+<%= link_to 'New Listing', new_category_listing_path %>

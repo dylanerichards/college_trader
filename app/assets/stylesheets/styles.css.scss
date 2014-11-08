@@ -42,6 +42,7 @@ body {
   text-align: center;
   font-size: 15px;
 }
+
 .listingListItem {
   list-style: none;
 }
@@ -58,4 +59,12 @@ body {
 .navbar-default {
   background-color: white;
   border-color: white;
+}
+
+.buyingListings {
+  margin-left: 500px;
+}
+
+.sellingListings {
+  margin-right: 500px;
 }

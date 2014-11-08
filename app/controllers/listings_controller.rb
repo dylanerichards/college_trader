@@ -16,6 +16,7 @@ class ListingsController < ApplicationController
   end
 
   def edit
+    @category = Category.find(params[:category_id])
   end
 
   def create

@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @category.name %>
+<strong>Name:</strong>
+<%= @category.name %>
 </p>
 
 </br>
@@ -13,15 +13,11 @@
 </br>
 
 <p>
-  <strong>All Listings</strong>
-  <ul>
+<strong>All Listings</strong>
+<ul>
   <% @category.listings.each do |listing| %>
     <li class='listingListItem'><%= link_to listing.name, category_listing_path(@category, listing) %>
-</li>
-      <% end%>
+  </li>
+<% end%>
 </p>
   </ul>
-
-
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>

@@ -14,6 +14,17 @@
   <%= @listing.description %>
 </p>
 
+<% @listing.comments.each do |comment| %>
+  <p class='comment'>
+    <%= comment.comment %> </br>
+  </p>
+<% end %>
+
+<%= form_for [@category, @listing, @comment] do |f| %>
+  <%= f.text_area :comment %>
+  <%= f.submit %>
+<% end %>
+
 <%= link_to 'Edit', edit_category_listing_path(@category, @listing) %> |
 <%= link_to 'Delete', category_listing_path(@category, @listing), method: :delete %>
 

@@ -18,6 +18,16 @@ body {
   margin-top: 1px;
 }
 
+.listingButton {
+  height: 58px;
+  width: 212px;
+  background-color: #8169a0;
+  display: table;
+  table-layout: fixed;
+  font-size: 20px;
+  margin-top: 1px;
+}
+
 .categoryButton a {
   color: white;
   display: table-cell;
@@ -25,6 +35,12 @@ body {
   text-align: center;
 }
 
+.listingButton a {
+  color: white;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
 .listingListItem {
   list-style: none;
 }

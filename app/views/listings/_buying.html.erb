@@ -1,5 +1,7 @@
-<ul>
-  <% @buying_listings.each do |listing| %>
-    <li><%= listing.name %></li>
-  <% end %>
-</ul>
+<h2>Buying</h2>
+
+<% @buying_listings.each do |listing| %>
+  <div class='listingButton center-block'>
+    <%= link_to listing.name, category_listing_path(@category, listing) %>
+  </div>
+<% end %>

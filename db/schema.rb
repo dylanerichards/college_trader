@@ -22,7 +22,9 @@ ActiveRecord::Schema.define(version: 20141108013445) do
   create_table "listings", force: true do |t|
     t.string   "name"
     t.text     "description"
-    t.boolean  "is_sell",     default: true
+    t.boolean  "is_sell",          default: true
+    t.boolean  "price_negotiable", default: true
+    t.decimal  "asking_price"
     t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"

@@ -15,15 +15,23 @@
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
+
   <div class="field">
     <%= f.label :description %><br>
     <%= f.text_area :description %>
   </div>
+
   <div class="field">
-    <%= f.label :is_sell %><br>
-    <%= f.check_box :is_sell %>
+    <%= f.label :is_sell, 'Buy/Sell' %><br>
+    <%= f.select :is_sell, [['Sell', true], ['Buy', false]] %>
   </div>
+
+  <div class="field">
+    <%= f.label :price_negotiable, 'Price negotiable?' %><br>
+    <%= f.select :price_negotiable, [['Yes', true], ['No', false]] %>
+  </div>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit nil, class: 'listingSubmitButton' %>
   </div>
 <% end %>

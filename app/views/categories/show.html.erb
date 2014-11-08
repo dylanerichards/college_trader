@@ -16,7 +16,7 @@
   <strong>All Listings</strong>
   <ul>
   <% @category.listings.each do |listing| %>
-    <li><%= link_to listing.name, category_listing_path(@category, listing) %>
+    <li class='listingListItem'><%= link_to listing.name, category_listing_path(@category, listing) %>
 </li>
       <% end%>
 </p>

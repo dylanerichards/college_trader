@@ -11,4 +11,9 @@
 </p>
 
 <%= link_to 'Edit', edit_category_listing_path(@category, @listing) %> |
+<%= link_to 'Delete', category_listing_path(@category, @listing), method: :delete %>
+
+</br>
+</br>
+
 <%= link_to 'Back', category_listings_path(@category) %>

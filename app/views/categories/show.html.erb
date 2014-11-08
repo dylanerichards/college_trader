@@ -1,9 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-<strong>Name:</strong>
-<%= @category.name %>
-</p>
+<h1><%= @category.name %></h1>
 
 </br>
 
@@ -12,12 +9,12 @@
 </br>
 </br>
 
-<p>
 <strong>All Listings</strong>
-<ul>
-  <% @category.listings.each do |listing| %>
-    <li class='listingListItem'><%= link_to listing.name, category_listing_path(@category, listing) %>
-  </li>
-<% end%>
-</p>
-  </ul>
+
+<div class='pull-left'>
+  <%= render 'listings/buying' %>
+</div>
+
+<div class='pull-right'>
+  <%= render 'listings/selling' %>
+</div>

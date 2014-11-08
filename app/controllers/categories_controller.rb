@@ -6,6 +6,8 @@ class CategoriesController < ApplicationController
   end
 
   def show
+    @selling_listings = Listing.where(is_sell: true)
+    @buying_listings = Listing.where(is_sell: false)
   end
 
   def new

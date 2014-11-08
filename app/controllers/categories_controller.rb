@@ -6,8 +6,8 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @selling_listings = Listing.where(is_sell: true)
-    @buying_listings = Listing.where(is_sell: false)
+    @selling_listings = Listing.where(category_id: @category.id, is_sell: true)
+    @buying_listings = Listing.where(category_id: @category.id, is_sell: false)
   end
 
   def new

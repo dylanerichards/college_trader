@@ -7,8 +7,10 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <link href='http://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
   </head>
+
   <body>
 
+    <%= render 'layouts/navbar' %>
     <%= yield %>
 
   </body>

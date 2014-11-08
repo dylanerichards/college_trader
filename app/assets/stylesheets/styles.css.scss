@@ -20,7 +20,7 @@ body {
 
 .listingButton {
   height: 58px;
-  width: 212px;
+  width: 112px;
   background-color: #8169a0;
   display: table;
   table-layout: fixed;
@@ -40,6 +40,7 @@ body {
   display: table-cell;
   vertical-align: middle;
   text-align: center;
+  font-size: 15px;
 }
 .listingListItem {
   list-style: none;

@@ -28,10 +28,10 @@ Rails.application.configure do
   config.action_mailer.default :charset => 'utf-8'
 
   config.action_mailer.smtp_settings = {
-    :address => 'smtp.gmail.com',
+    :address => 'smtp.sendgrid.net',
     :port => '587',
     :domain => 'albany-trader.herokuapp.com',
-    :user_name => 'ualbanytrade@gmail.com',
+    :user_name => 'UAlbanyTrade',
     :password => 'uablanytrade123',
     :authentication => 'plain',
     :enable_starttls_auto => true

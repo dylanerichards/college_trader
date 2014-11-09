@@ -14,6 +14,7 @@ gem 'spring',        group: :development
 gem 'bootstrap-sass', '~> 3.3.0'
 gem 'autoprefixer-rails'
 gem 'acts_as_commentable'
+gem 'devise'
 
 group :development do
   gem 'sqlite3'

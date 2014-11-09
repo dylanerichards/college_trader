@@ -63,9 +63,9 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { :host => 'albany-trader.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :address = '127.0.0.1',
-    :port = '25',
-    :domain = 'albany-trader.herokuapp.com'
+    :address => '127.0.0.1',
+    :port => '25',
+    :domain => 'albany-trader.herokuapp.com'
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to

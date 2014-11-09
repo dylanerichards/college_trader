@@ -10,7 +10,7 @@
 </br>
 </br>
 
-<strong>Posted by <%= @listing.user == current_user ? 'you'  : @listing.user.email %></strong>
+<strong>Posted by <%= @listing.user == current_user ? 'you'  : @listing.user.email if @listing.user %></strong>
 
 </br>
 

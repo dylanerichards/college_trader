@@ -1,8 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <h1><%= @listing.name %></h1>
-<%= link_to 'Edit', edit_category_listing_path(@category, @listing) %> |
-<%= link_to 'Delete', category_listing_path(@category, @listing), method: :delete %>
+
+<% if user_signed_in? && current_user == @listing.user %>
+  <%= link_to 'Edit', edit_category_listing_path(@category, @listing) %> |
+  <%= link_to 'Delete', category_listing_path(@category, @listing), method: :delete %>
+<% end %>
+
+</br>
+</br>
+
+Posted by <%= @listing.user == current_user ? 'you'  : @listing.user.email %> </br>
+<%= time_ago_in_words(@listing.created_at) %> ago
+
 
 </br>
 </br>

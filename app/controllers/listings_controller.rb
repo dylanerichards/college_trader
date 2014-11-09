@@ -26,6 +26,7 @@ class ListingsController < ApplicationController
 
     respond_to do |format|
       if @listing.save
+        current_user.listings << @listing
         format.html { redirect_to category_listing_path(@category, @listing), notice: 'Listing was successfully created.' }
         format.json { render :show, status: :created, location: @listing }
       else

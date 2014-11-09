@@ -21,8 +21,8 @@
 <% end %>
 
 <%= form_for [@category, @listing, @comment] do |f| %>
-  <%= f.text_area :comment %>
-  <%= f.submit %>
+  <%= f.text_area :comment %> </br>
+  <%= f.submit 'Comment', class: 'commentSubmitButton' %>
 <% end %>
 
 <%= link_to 'Edit', edit_category_listing_path(@category, @listing) %> |

@@ -34,7 +34,10 @@
 </br>
 
 <h3>Discussion</h3></br>
-<small class=signInToDiscuss>Sign in to discuss</small>
+
+<% unless user_signed_in? %>
+  <small class=signInToDiscuss>Sign in to discuss</small>
+<% end %>
 
 </br>
 

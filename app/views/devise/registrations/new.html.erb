@@ -3,7 +3,14 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
+  <div><%= f.label :email, class: 'emailLabel' %>
+
+  </br>
+
+  <small><i>(must be @albany.edu)</i></small>
+
+  <br />
+
   <%= f.email_field :email, autofocus: true %></div>
 
   </br>

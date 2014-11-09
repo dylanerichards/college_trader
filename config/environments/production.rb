@@ -27,7 +27,7 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     :address => 'smtp.gmail.com',
     :port => '587',
-    :domain => 'http://albany-trader.herokuapp.com',
+    :domain => 'albany-trader.herokuapp.com',
     :user_name => 'ualbanytrade@gmail.com',
     :password => 'uablanytrade123',
     :authentication => 'plain',

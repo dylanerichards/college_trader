@@ -38,7 +38,7 @@
 
 <% @listing.comments.each do |comment| %>
   <p class='comment'>
-  <strong><%= comment.user.email[/[^@]+/] if comment.user %></strong>: <%= comment.comment %> </br>
+  <strong><%= comment.user.email[/[^@]+/] + ":" if comment.user %></strong> <%= comment.comment %> </br>
   </p>
 <% end %>
 

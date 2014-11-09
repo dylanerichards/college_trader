@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
     comment = listing.comments.new(comment_params)
 
     if comment.save
-      redirect_to root_path
+      redirect_to :back
     else
       redirect_to :back
     end

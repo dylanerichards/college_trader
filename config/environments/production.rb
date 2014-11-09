@@ -31,5 +31,6 @@ Rails.application.configure do
     :user_name => 'ualbanytrade@gmail.com',
     :password => 'uablanytrade123',
     :authentication => 'plain'
+    :enable_starttls_auto => true
   }
 end

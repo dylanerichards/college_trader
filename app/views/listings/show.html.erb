@@ -36,6 +36,8 @@
 
 <h3>Discussion</h3>
 
+</br>
+
 <% @listing.comments.each do |comment| %>
   <p class='comment'>
   <strong><%= comment.user.email[/[^@]+/] + ":" if comment.user %></strong> <%= comment.comment %> </br>

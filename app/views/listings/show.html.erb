@@ -4,6 +4,9 @@
 <%= link_to 'Edit', edit_category_listing_path(@category, @listing) %> |
 <%= link_to 'Delete', category_listing_path(@category, @listing), method: :delete %>
 
+</br>
+</br>
+
 <p>
   <strong>Price:</strong>
   <%= number_to_currency(@listing.asking_price) %> <small><i><%= @listing.price_negotiable ? '(negotiable)' : '(non-negotiable)' %></i></small>
@@ -27,8 +30,5 @@
   <%= f.submit 'Comment', class: 'commentSubmitButton' %>
 <% end %>
 
-
 </br>
 </br>
-
-<%= link_to 'Back', :back %>

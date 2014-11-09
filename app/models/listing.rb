@@ -1,5 +1,5 @@
 class Listing < ActiveRecord::Base
-  default_scope -> { order('created_at ASC') }
+  default_scope -> { order('created_at DESC') }
 
   belongs_to :category
 

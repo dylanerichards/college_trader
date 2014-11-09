@@ -30,9 +30,9 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     :address => 'smtp.sendgrid.net',
     :port => '587',
-    :domain => 'albany-trader.herokuapp.com',
-    :user_name => 'UAlbanyTrade',
-    :password => 'uablanytrade123',
+    :domain => 'heroku.com',
+    :user_name => 'app31396612@heroku.com',
+    :password => 'zsbsvbmv',
     :authentication => 'plain',
     :enable_starttls_auto => true
   }

@@ -32,9 +32,13 @@
   <%= @listing.description %>
 </p>
 
+</br>
+
+<h3>Discussion</h3>
+
 <% @listing.comments.each do |comment| %>
   <p class='comment'>
-    <%= comment.comment %> </br>
+  <strong><%= comment.user.email[/[^@]+/] if comment.user %></strong>: <%= comment.comment %> </br>
   </p>
 <% end %>
 

@@ -30,7 +30,7 @@ Rails.application.configure do
     :domain => 'albany-trader.herokuapp.com',
     :user_name => 'ualbanytrade@gmail.com',
     :password => 'uablanytrade123',
-    :authentication => 'plain'
-    # :enable_starttls_auto => true
+    :authentication => 'plain',
+    :enable_starttls_auto => true
   }
 end

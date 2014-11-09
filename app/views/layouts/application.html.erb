@@ -13,6 +13,13 @@
     <%= render 'layouts/navbar' %>
 
     <div class="container">
+
+      <% flash.each do |name, message| %>
+        <div class='<%= flash_class(name) %>'>
+          <%= message %>
+        </div>
+      <% end %>
+
       <%= yield %>
     </div>
 

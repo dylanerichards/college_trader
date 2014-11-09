@@ -5,10 +5,9 @@
 <% if user_signed_in? && current_user == @listing.user %>
   <%= link_to 'Edit', edit_category_listing_path(@category, @listing) %> |
   <%= link_to 'Delete', category_listing_path(@category, @listing), method: :delete %>
+  </br>
+  </br>
 <% end %>
-
-</br>
-</br>
 
 <strong>Posted by <%= @listing.user == current_user ? 'you'  : @listing.user.email if @listing.user %></strong>
 
@@ -34,7 +33,8 @@
 
 </br>
 
-<h3>Discussion</h3>
+<h3>Discussion</h3></br>
+<small class=signInToDiscuss>Sign in to discuss</small>
 
 </br>
 
@@ -44,9 +44,11 @@
   </p>
 <% end %>
 
-<%= form_for [@category, @listing, @comment] do |f| %>
-  <%= f.text_area :comment %> </br>
-  <%= f.submit 'Comment', class: 'commentSubmitButton' %>
+<% if user_signed_in? %>
+  <%= form_for [@category, @listing, @comment] do |f| %>
+    <%= f.text_area :comment %> </br>
+    <%= f.submit 'Comment', class: 'commentSubmitButton' %>
+  <% end %>
 <% end %>
 
 </br>

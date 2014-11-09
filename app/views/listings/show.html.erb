@@ -10,7 +10,10 @@
 </br>
 </br>
 
-Posted by <%= @listing.user == current_user ? 'you'  : @listing.user.email %> </br>
+<strong>Posted by <%= @listing.user == current_user ? 'you'  : @listing.user.email %></strong>
+
+</br>
+
 <%= time_ago_in_words(@listing.created_at) %> ago
 
 

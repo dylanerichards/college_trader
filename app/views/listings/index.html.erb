@@ -1,15 +1,17 @@
-<h1>Listing listings</h1>
+<h1><%= params[:search] %> Listings</h1>
 
 </br>
 
-  <%= link_to '++ New Listing ++', new_category_listing_path, class: 'btn btn-default noBorder' %>
+<%= link_to '++ New Listing ++', new_category_listing_path, class: 'btn btn-default noBorder' %>
 
 </br>
 
-<div class='buyingListings'>
-  <%= render 'listings/buying' %>
-</div>
+<div class="listings">
+  <div class='buyingListings'>
+    <%= render 'listings/buying' %>
+  </div>
 
-<div class='sellingListings'>
-  <%= render 'listings/selling' %>
+  <div class='sellingListings'>
+    <%= render 'listings/selling' %>
+  </div>
 </div>

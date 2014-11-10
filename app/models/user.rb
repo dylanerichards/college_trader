@@ -8,4 +8,5 @@ class User < ActiveRecord::Base
 
   has_many :comments
   has_many :listings
+  belongs_to :listing
 end

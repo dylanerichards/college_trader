@@ -6,13 +6,7 @@ class Listing < ActiveRecord::Base
   belongs_to :category
   belongs_to :user
 
-  acts_as_commentable
+  has_many :users, through: :comments
 
-  # def self.search(search)
-  #   if search
-  #     find(:all, conditions: ['name LIKE ?', "%#{search}%"])
-  #   else
-  #     all
-  #   end
-  # end
+  acts_as_commentable
 end

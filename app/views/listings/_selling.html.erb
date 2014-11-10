@@ -2,6 +2,10 @@
 
 <% @selling_listings.each do |listing| %>
   <div class='listingButton center-block'>
-    <%= link_to listing.name, category_listing_path(@category, listing) %>
+    <% if params[:category_id] %>
+      <%= link_to listing.name, category_listing_path(@category, listing) %>
+    <% else %>
+      <%= link_to listing.name, listing %>
+    <% end %>
   </div>
 <% end %>

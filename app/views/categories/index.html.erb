@@ -3,6 +3,13 @@
 
 <br>
 
+<%= form_tag listings_path, method: :get do %>
+  <p>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag 'Search', name: nil, class: 'listingSubmitButton'  %>
+  </p>
+<% end %>
+
 <% @categories.each do |category| %>
   <div class="categoryButton center-block">
     <%= link_to category.name, category %>

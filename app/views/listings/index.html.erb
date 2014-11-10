@@ -2,7 +2,9 @@
 
 </br>
 
-<%= link_to '++ New Listing ++', new_category_listing_path, class: 'btn btn-default noBorder' %>
+<% if params[:category_id] %>
+  <%= link_to '++ New Listing ++', new_category_listing_path, class: 'btn btn-default noBorder' %>
+<% end %>
 
 </br>
 

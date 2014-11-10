@@ -6,8 +6,9 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @selling_listings = Listing.where(category_id: @category.id, is_sell: true)
-    @buying_listings = Listing.where(category_id: @category.id, is_sell: false)
+    @selling_listings = Listing.where(category_id: @category.id, is_sell: true).where("name LIKE ?", "%#{params[:search]}")
+
+    @buying_listings = Listing.where(category_id: @category.id, is_sell: false).where("name LIKE ?", "%#{params[:search]}")
   end
 
   def new

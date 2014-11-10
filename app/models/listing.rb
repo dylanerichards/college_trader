@@ -7,4 +7,12 @@ class Listing < ActiveRecord::Base
   belongs_to :user
 
   acts_as_commentable
+
+  # def self.search(search)
+  #   if search
+  #     find(:all, conditions: ['name LIKE ?', "%#{search}%"])
+  #   else
+  #     all
+  #   end
+  # end
 end

@@ -48,7 +48,7 @@
 <% end %>
 
 <% if user_signed_in? %>
-  <%= form_for [@category, @listing, @comment] do |f| %>
+  <%= form_for [@listing, @comment] do |f| %>
     <%= f.text_area :comment %> </br>
     <%= f.submit 'Comment', class: 'commentSubmitButton' %>
   <% end %>

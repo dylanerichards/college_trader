@@ -103,3 +103,11 @@ body {
 .orangeText {
   color: #f39c12;
 }
+
+* {
+  .border-radius: 0px !important;
+}
+
+.noBorder {
+  border: none !important;
+}

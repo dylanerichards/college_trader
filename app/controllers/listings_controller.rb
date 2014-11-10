@@ -4,11 +4,11 @@ class ListingsController < ApplicationController
   def index
     if params[:category_id]
       @category = Category.find(params[:category_id])
-      @buying_listings = @category.listings.where("name LIKE ?", "%#{params[:search]}%").where(is_sell: false)
-      @selling_listings = @category.listings.where("name LIKE ?", "%#{params[:search]}%").where(is_sell: true)
+      @buying_listings = @category.listings.where("lower(name) LIKE ?", "%#{params[:search].downcase}%").where(is_sell: false)
+      @selling_listings = @category.listings.where("lower(name) LIKE ?", "%#{params[:search].downcase}%").where(is_sell: true)
     else
-      @buying_listings = Listing.where("name LIKE ?", "%#{params[:search]}%").where(is_sell: false)
-      @selling_listings = Listing.where("name LIKE ?", "%#{params[:search]}%").where(is_sell: true)
+      @buying_listings = Listing.where("lower(name) LIKE ?", "%#{params[:search].downcase}%").where(is_sell: false)
+      @selling_listings = Listing.where("lower(name) LIKE ?", "%#{params[:search].downcase}%").where(is_sell: true)
     end
   end
 

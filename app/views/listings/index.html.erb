@@ -1,27 +1,15 @@
 <h1>Listing listings</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+</br>
 
-  <tbody>
-    <% @listings.each do |listing| %>
-      <tr>
-        <td><%= listing.name %></td>
-        <td><%= listing.description %></td>
-        <td><%= link_to 'Show', category_listing_path(@category, listing) %></td>
-        <td><%= link_to 'Edit', edit_category_listing_path(@category, listing) %></td>
-        <td><%= link_to 'Destroy', category_listing_path(@category, listing), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<%= link_to '++ New Listing ++', new_category_listing_path %>
 
-<br>
+</br>
 
-<%= link_to 'New Listing', new_category_listing_path %>
+<div class='buyingListings'>
+  <%= render 'listings/buying' %>
+</div>
+
+<div class='sellingListings'>
+  <%= render 'listings/selling' %>
+</div>

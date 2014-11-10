@@ -3,7 +3,8 @@ class ListingsController < ApplicationController
 
   def index
     @category = Category.find(params[:category_id])
-    @listings = @category.listings.where("name LIKE ?", "%#{params[:search]}%")
+    @buying_listings = @category.listings.where("name LIKE ?", "%#{params[:search]}%").where(is_sell: false)
+    @selling_listings = @category.listings.where("name LIKE ?", "%#{params[:search]}%").where(is_sell: true)
   end
 
   def show

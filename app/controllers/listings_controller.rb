@@ -18,16 +18,16 @@ class ListingsController < ApplicationController
   end
 
   def new
-    @category = Category.find(params[:category_id])
+    @category = Category.find(params[:category_id]) if params[:category_id]
     @listing = Listing.new
   end
 
   def edit
-    @category = Category.find(params[:category_id])
+    @category = Category.find(params[:category_id]) if params[:category_id]
   end
 
   def create
-    @category = Category.find(params[:category_id])
+    @category = Category.find(params[:category_id]) if params[:category_id]
     @listing = @category.listings.build(listing_params)
 
     respond_to do |format|
@@ -43,16 +43,28 @@ class ListingsController < ApplicationController
   end
 
   def update
-    @category = Category.find(params[:category_id])
-    @listing = @category.listings.build(listing_params)
+    if params[:category_id]
+      @category = Category.find(params[:category_id])
+      @listing = @category.listings.build(listing_params)
 
-    respond_to do |format|
-      if @listing.update(listing_params)
-        format.html { redirect_to category_listing_path(@category, @listing), notice: 'Listing was successfully updated.' }
-        format.json { render :show, status: :ok, location: @listing }
-      else
-        format.html { render :edit }
-        format.json { render json: @listing.errors, status: :unprocessable_entity }
+      respond_to do |format|
+        if @listing.update(listing_params)
+          format.html { redirect_to category_listing_path(@category, @listing), notice: 'Listing was successfully updated.' }
+          format.json { render :show, status: :ok, location: @listing }
+        else
+          format.html { render :edit }
+          format.json { render json: @listing.errors, status: :unprocessable_entity }
+        end
+      end
+    else
+      respond_to do |format|
+        if @listing.update(listing_params)
+          format.html { redirect_to listing_path(@listing), notice: 'Listing was successfully updated.' }
+          format.json { render :show, status: :ok, location: @listing }
+        else
+          format.html { render :edit }
+          format.json { render json: @listing.errors, status: :unprocessable_entity }
+        end
       end
     end
   end

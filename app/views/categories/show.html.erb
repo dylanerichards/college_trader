@@ -4,7 +4,7 @@
 
 <%= form_tag category_listings_path(@category), method: :get do %>
   <p>
-  <%= text_field_tag :search, params[:search] %>
+  <%= text_field_tag :search, params[:search], placeholder: 'Case-sensitive' %>
   <%= submit_tag 'Search', name: nil, class: 'listingSubmitButton'  %>
   </p>
 <% end %>

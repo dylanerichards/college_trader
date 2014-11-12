@@ -1,10 +1,9 @@
-development:
-  from: '+15162793518'
-  sid: 'ACaba54b35d3fc387d2f1d005eb431cf38'
-  token: '259cac6ac994f77699bc419c0c3a0292'
-
 production:
   from: '+15162793518'
   sid: 'ACaba54b35d3fc387d2f1d005eb431cf38'
   token: '259cac6ac994f77699bc419c0c3a0292'
 
+development:
+  from: '+15162793518'
+  sid: 'ACaba54b35d3fc387d2f1d005eb431cf38'
+  token: '259cac6ac994f77699bc419c0c3a0292'

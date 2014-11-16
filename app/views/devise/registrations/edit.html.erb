@@ -7,7 +7,7 @@
   <%= f.email_field :email, autofocus: true %></div>
 
   <div><%= f.label :phone %><br />
-  <%= f.text_field :phone %></div>
+  <%= f.text_field :phone, placeholder: '+1numberWithAreaCode' %></div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>

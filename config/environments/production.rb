@@ -31,8 +31,8 @@ Rails.application.configure do
     :address => 'smtp.sendgrid.net',
     :port => '587',
     :domain => 'albany-trader.heroku.com',
-    :user_name => 'app31396612@heroku.com',
-    :password => 'zsbsvbmv',
+    :user_name => 'ualbanytrade',
+    :password => 'ualbanytrade123',
     :authentication => 'plain',
     :enable_starttls_auto => true
   }

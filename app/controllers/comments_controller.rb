@@ -3,7 +3,8 @@ class CommentsController < ApplicationController
     listing = Listing.find(params[:listing_id])
     comment = listing.comments.new(comment_params)
     # users = listing.users.where.not(id: current_user.id)
-    users = listing.users.uniq
+    users = listing.users.uniq << listing.user
+    users.delete current_user if current_user
 
     if comment.save
       current_user.comments << comment

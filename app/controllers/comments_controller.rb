@@ -1,4 +1,15 @@
 class CommentsController < ApplicationController
+  def index
+    @listing = Listing.find(params[:listing_id])
+    @comments = @listing.comments
+
+    respond_to do |format|
+      format.json { render json: @comments }
+      format.html { render html: @comments }
+    end
+  end
+
+
   def create
     listing = Listing.find(params[:listing_id])
     comment = listing.comments.new(comment_params)

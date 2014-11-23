@@ -16,6 +16,7 @@ gem 'autoprefixer-rails'
 gem 'acts_as_commentable'
 gem 'devise'
 gem 'twilio-ruby'
+gem 'angularjs-rails'
 
 group :development do
   gem 'sqlite3'

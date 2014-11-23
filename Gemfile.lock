@@ -28,6 +28,7 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     acts_as_commentable (4.0.2)
+    angularjs-rails (1.2.16)
     arel (5.0.1.20140414130214)
     autoprefixer-rails (3.1.2.20141016)
       execjs
@@ -135,6 +136,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts_as_commentable
+  angularjs-rails
   autoprefixer-rails
   bootstrap-sass (~> 3.3.0)
   coffee-rails (~> 4.0.0)

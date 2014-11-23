@@ -17,7 +17,7 @@ class ListingsController < ApplicationController
     @comment = @listing.comments.new
 
     respond_to do |format|
-      format.json { render_json: @category }
+      format.json { render_json: @comment }
     end
   end
 

@@ -2,7 +2,6 @@ class CommentsController < ApplicationController
   def create
     listing = Listing.find(params[:listing_id])
     comment = listing.comments.new(comment_params)
-    # users = listing.users.where.not(id: current_user.id)
     users = listing.users.uniq << listing.user
     users.delete current_user if current_user
 

@@ -16,10 +16,6 @@ class ListingsController < ApplicationController
     @category = Category.find(params[:category_id]) if params[:category_id]
     @comment = @listing.comments.new
     @comments = @listing.comments
-
-    respond_to do |format|
-      format.json { render_json: @comments }
-    end
   end
 
   def new

@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 
   # validates_format_of :email, :with => /\b(?:(?![_.-])(?!.*[_.-]{2})[a-z0-9_.-]+(?<![_.-]))@(?:(?!-)(?!.*--)[a-z0-9-]+(?<!-)\.)*albany\.edu\b/i
 
-  has_many :comments
-  has_many :listings
+  has_many :comments, dependent: :destroy
+  has_many :listings, dependent: :destroy
   belongs_to :listing
 end

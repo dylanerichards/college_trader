@@ -9,4 +9,8 @@ class Listing < ActiveRecord::Base
   has_many :users, through: :comments
 
   acts_as_commentable
+
+  def users
+    self.users.uniq << self.user
+  end
 end

@@ -13,8 +13,8 @@ class CommentsController < ApplicationController
   def create
     listing = Listing.find(params[:listing_id])
     comment = listing.comments.new(comment_params)
-    users = listing.users.uniq << listing.user
-    users.delete current_user if current_user
+
+    listing.users.delete current_user if current_user
 
     if comment.save
       current_user.comments << comment

@@ -49,6 +49,7 @@ body {
 
 .listingSubmitButton {
   background-color: #f1c40f;
+  border-radius: 0;
 }
 
 .commentSubmitButton {
@@ -119,4 +120,11 @@ body {
 
 .searchButton {
   background-color: #f1c40f;
+}
+
+::selection {
+  background: #DADFE1;
+}
+::-moz-selection {
+  background: #DADFE1;
 }
